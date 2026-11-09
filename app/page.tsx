@@ -1,69 +1,73 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const skills = ["HTML5", "CSS", "JavaScript", "Node.js", "React", "Git", "GitHub"];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <section className="overflow-hidden rounded-3xl border bg-card text-card-foreground shadow-xl dark:border-[rgb(var(--glow)/0.4)] dark:shadow-[0_0_25px_rgb(var(--glow)/0.25)]">
+      <div className="flex flex-col-reverse items-center gap-10 px-6 pt-12 md:flex-row md:justify-between md:px-14 md:pt-16">
+        <div className="w-full space-y-5 pb-10 md:w-1/2 md:pb-16">
+          <h1 className="text-4xl font-bold sm:text-5xl">
+            Hello<span className="text-[rgb(var(--glow))]">.</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+
+          <div className="flex items-center gap-4">
+            <span className="hidden h-px w-16 bg-[rgb(var(--glow))] sm:block" />
+            <p className="text-2xl font-light sm:text-3xl">I&apos;m JIC</p>
+          </div>
+
+          <h2 className="text-3xl font-bold sm:text-5xl">WebDeveloper</h2>
+
+          <div className="flex flex-wrap gap-3 pt-3">
+            <Link
+              href="/contact"
+              className="bg-[rgb(var(--glow))] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[rgb(var(--glow)/0.85)]"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              Got a project?
+            </Link>
+            <Link
+              href="/about"
+              className="border border-[rgb(var(--glow))] px-5 py-2.5 text-sm font-medium text-foreground transition hover:bg-[rgb(var(--glow)/0.1)]"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              About me
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+
+        <div className="relative flex w-full items-end justify-center md:w-1/2">
+          <ChevronLeft
+            className="absolute left-2 top-4 h-24 w-24 text-[rgb(var(--glow)/0.3)] sm:left-8"
+            strokeWidth={1}
+          />
+          <ChevronRight
+            className="absolute bottom-6 right-2 h-20 w-20 text-[rgb(var(--glow)/0.3)] sm:right-8"
+            strokeWidth={1}
+          />
+          <div className="absolute bottom-0 h-72 w-72 rounded-full bg-[rgb(var(--glow)/0.1)] blur-3xl dark:bg-[rgb(var(--glow)/0.2)] sm:h-80 sm:w-80" />
+          <div className="relative h-64 w-64 overflow-hidden rounded-full border-[14px] border-[rgb(var(--glow))] bg-muted sm:h-80 sm:w-80">
             <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              src="/Jic.JPG"
+              alt="My profile picture"
+              fill
+              sizes="(min-width: 640px) 320px, 256px"
+              className="object-cover object-top"
+              priority
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
         </div>
-      </main>
-    </div>
+      </div>
+
+      <div className="border-t bg-muted/50 px-6 py-5">
+        <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-muted-foreground md:justify-between md:px-8">
+          {skills.map((skill) => (
+            <li key={skill} className="transition hover:text-[rgb(var(--glow))]">
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }
